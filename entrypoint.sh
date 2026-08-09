@@ -58,4 +58,35 @@ common="$source_config/_common/common.runtime.properties"
 } >>"$common"
 
 unset DRUID_ADMIN_PASSWORD DRUID_INTERNAL_PASSWORD
-exec perl bin/supervise -c conf/supervise/single-server/nano-quickstart.conf
+
+log_dir="${DRUID_LOG_DIR:-/tmp/druid-log}"
+mkdir -p "$log_dir"
+export DRUID_LOG_DIR="$log_dir"
+
+perl bin/supervise -c conf/supervise/single-server/nano-quickstart.conf &
+supervisor_pid=$!
+
+(
+  while kill -0 "$supervisor_pid" 2>/dev/null; do
+    set -- "$log_dir"/*.log
+    if [ -e "$1" ]; then
+      exec tail -n +1 -F "$log_dir"/*.log
+    fi
+    sleep 1
+  done
+) &
+tail_pid=$!
+
+cleanup() {
+  trap - INT TERM
+  kill -TERM "$supervisor_pid" "$tail_pid" 2>/dev/null || true
+  wait "$supervisor_pid" "$tail_pid" 2>/dev/null || true
+}
+
+trap 'cleanup; exit 0' INT TERM
+set +e
+wait "$supervisor_pid"
+status=$?
+set -e
+cleanup
+exit "$status"
