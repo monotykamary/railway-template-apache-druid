@@ -26,6 +26,7 @@ One container supervises ZooKeeper plus Druid Coordinator/Overlord, Broker, Rout
 - This is the upstream **nano quickstart**, not a production HA cluster.
 - ZooKeeper, Derby metadata, local deep storage, and every Druid role share one container and volume.
 - Horizontal scaling, rolling role upgrades, replication across hosts, and failure isolation are not provided.
+- JVM processor detection is capped at two cores so the six quickstart roles remain within Railway's container thread limit.
 - The Router can become healthy before Historical has re-announced every segment after restart; allow a short convergence period before querying.
 - Production deployments should use external metadata storage, durable deep storage, separate roles, and capacity planning.
 

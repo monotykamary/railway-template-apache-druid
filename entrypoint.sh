@@ -34,6 +34,8 @@ for value in "$DRUID_ADMIN_PASSWORD" "$DRUID_INTERNAL_PASSWORD"; do
   fi
 done
 
+export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:+$JAVA_TOOL_OPTIONS }-XX:ActiveProcessorCount=2"
+
 source_config=conf/druid/single-server/nano-quickstart
 common="$source_config/_common/common.runtime.properties"
 

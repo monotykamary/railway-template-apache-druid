@@ -15,7 +15,7 @@ Apache Druid is a high-performance analytics database for event-oriented data an
 
 ### Deployment Dependencies
 
-The template creates one source-backed service and one volume mounted at `/opt/druid/var`. The service needs at least 4 GB RAM. All Druid roles, ZooKeeper, embedded Derby metadata, and local deep storage intentionally share that service and volume.
+The template creates one source-backed service and one volume mounted at `/opt/druid/var`. The service needs at least 4 GB RAM. All Druid roles, ZooKeeper, embedded Derby metadata, and local deep storage intentionally share that service and volume. JVM processor detection is capped at two cores so the six quickstart roles remain within Railway's container thread limit.
 
 ### Implementation Details
 
