@@ -1,6 +1,6 @@
 # Apache Druid on Railway
 
-<!-- The verified Railway deploy button is added after publication. -->
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/apache-druid-single-node)
 
 A secured, persistent [Apache Druid](https://druid.apache.org/) single-node quickstart for evaluation and small analytics workloads. The wrapper pins Druid `37.0.0`, copies the official Java distribution into Temurin `17.0.19+10`, enables Druid Basic Security, and persists metadata, task state, and segments on one volume.
 
