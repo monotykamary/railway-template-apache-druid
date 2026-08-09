@@ -16,7 +16,6 @@ RUN mkdir -p /opt/shared \
 
 USER druid
 WORKDIR /opt/druid
-VOLUME ["/opt/druid/var"]
 EXPOSE 8888
 
 ENTRYPOINT ["/opt/druid/railway-entrypoint"]
