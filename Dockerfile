@@ -14,7 +14,7 @@ RUN mkdir -p /opt/shared \
   && chown -R druid:druid /opt/shared \
   && chmod 755 /opt/druid/railway-entrypoint
 
-USER druid
+USER root
 WORKDIR /opt/druid
 EXPOSE 8888
 

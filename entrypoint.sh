@@ -2,6 +2,12 @@
 set -eu
 umask 077
 
+if [ "$(id -u)" -eq 0 ]; then
+  mkdir -p /opt/druid/var
+  chown druid:druid /opt/druid/var
+  exec setpriv --reuid=druid --regid=druid --init-groups "$0" "$@"
+fi
+
 require() {
   name="$1"
   eval "value=\${$name:-}"
