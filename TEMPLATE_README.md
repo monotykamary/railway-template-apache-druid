@@ -2,7 +2,7 @@
 
 ## About Hosting Apache Druid
 
-Apache Druid is a high-performance analytics database for event-oriented data and low-latency OLAP queries. This template packages the Druid `37.0.0` nano quickstart with Basic Security and persistent local storage for evaluation and small workloads.
+Apache Druid is a high-performance analytics database for event-oriented data and low-latency OLAP queries. This template packages the Druid `38.0.0` nano quickstart with Basic Security and persistent local storage for evaluation and small workloads.
 
 ## Common Use Cases
 

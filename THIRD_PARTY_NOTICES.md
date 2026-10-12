@@ -1,6 +1,6 @@
 # Third-party notices
 
-This repository packages the official Apache Druid `37.0.0` Java distribution in a Railway-compatible runtime.
+This repository packages the official Apache Druid `38.0.0` Java distribution in a Railway-compatible runtime.
 
 - Apache Druid source: https://github.com/apache/druid
 - Copyright: The Apache Software Foundation and contributors

@@ -1,6 +1,6 @@
-FROM apache/druid:37.0.0@sha256:0116fb802786649fc3635d6d4ab5be4da8abee3edafbe95c7f358a564d4c82e8 AS druid
+FROM apache/druid:38.0.0@sha256:4156a8ca87b855ff6c14f9d95529149b64fe56e25cb394d3043957efae0b9054 AS druid
 
-FROM eclipse-temurin:17.0.19_10-jre-jammy@sha256:89e68b9bb83713510b63e2059a415792a7fc77e14b739a7d7ede97f6d9ca2c38
+FROM eclipse-temurin:21.0.12.1_1-jre-jammy@sha256:f04fb34e053148344e83317976114ec3f37e4b830ec8bdab5a2fe3cecd7d010b
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends perl procps \

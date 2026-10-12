@@ -2,7 +2,7 @@
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/apache-druid-single-node)
 
-A secured, persistent [Apache Druid](https://druid.apache.org/) single-node quickstart for evaluation and small analytics workloads. The wrapper pins Druid `37.0.0`, copies the official Java distribution into Temurin `17.0.19+10`, enables Druid Basic Security, and persists metadata, task state, and segments on one volume.
+A secured, persistent [Apache Druid](https://druid.apache.org/) single-node quickstart for evaluation and small analytics workloads. The wrapper pins Druid `38.0.0`, copies the official Java distribution into Temurin `17.0.19+10`, enables Druid Basic Security, and persists metadata, task state, and segments on one volume.
 
 ## Architecture
 
@@ -38,6 +38,6 @@ Update the Druid image tag/digest and compatible Temurin tag/digest, rebuild for
 
 - Source: https://github.com/apache/druid
 - Documentation: https://druid.apache.org/docs/latest/
-- Release: https://github.com/apache/druid/releases/tag/druid-37.0.0
+- Release: https://github.com/apache/druid/releases/tag/druid-38.0.0
 - License: [Apache License 2.0](LICENSE)
 - Temurin: https://adoptium.net/temurin/releases/?version=17
