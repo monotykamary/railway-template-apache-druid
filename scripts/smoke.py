@@ -10,7 +10,8 @@ def req(path,body=None,password=password,expected=(200,)):
  except urllib.error.HTTPError as e:r=e
  with r:status=r.code;raw=r.read()
  assert status in expected,f'{path} unexpected status {status}'
- return json.loads(raw) if raw else None
+ # Authentication failures are HTML, not JSON; status above is the negative assertion.
+ return json.loads(raw) if raw and status==200 else None
 assert req('/status/health') is True
 req('/druid/v2/sql',{'query':'SELECT 1'},password='wrong-'+password,expected=(401,403))
 if p.exists():s=json.loads(p.read_text())
