@@ -6,4 +6,4 @@ This repository packages the official Apache Druid `38.0.0` Java distribution in
 - Copyright: The Apache Software Foundation and contributors
 - License: Apache License 2.0
 
-The runtime also uses Eclipse Temurin OpenJDK `17.0.19+10`, distributed under GPLv2 with the Classpath Exception, and Ubuntu runtime packages under their respective licenses. The official Druid distribution, NOTICE, and licenses remain under `/opt/druid` in the image.
+The runtime also uses Eclipse Temurin OpenJDK `21.0.13+9`, distributed under GPLv2 with the Classpath Exception, and Ubuntu runtime packages under their respective licenses. The official Druid distribution, NOTICE, and licenses remain under `/opt/druid` in the image.
